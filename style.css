@@ -1100,7 +1100,7 @@ body{
 	color: #fff !important;
 }
 .call-action .content .second:before{
-	background:#fff;
+	background:#1A76D1;
 }
 .call-action .content .second:hover{
 	color:#1A76D1;
@@ -3109,6 +3109,7 @@ body{
 	transition: background 0.3s ease;
 }
 
+
 .cookie-actions .btn.accept {
 	background-color: #1a76d1;
 	color: #fff;
@@ -3120,10 +3121,14 @@ body{
 
 .cookie-actions .btn.decline {
 	background-color: #f0f0f0;
-	color: #333;
+	color: #555;
 }
 
 .cookie-actions .btn.settings {
+	background-color: #e0e0e0;
+	color: #555;
+}
+.cookie-actions .btn.settings:hover {
 	background-color: #e0e0e0;
 	color: #555;
 }
