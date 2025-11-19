@@ -1,0 +1,838 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="2M Trucking, Gallery, Trucking photos, Logistics videos">
+	<meta name="description" content="Photo and video gallery of 2M Trucking LLC operations, trucks, team and deliveries.">
+	<meta name='copyright' content=''>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Gallery - 2M Trucking LLC</title>
+
+	<link rel="icon" href="img/2mfavicon.png">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+	<!-- Font Awesome Free CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+		  integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+		  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- Nice Select CSS -->
+	<link rel="stylesheet" href="css/nice-select.css">
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- icofont CSS -->
+	<link rel="stylesheet" href="css/icofont.css">
+	<!-- Slicknav -->
+	<link rel="stylesheet" href="css/slicknav.min.css">
+	<!-- Owl Carousel CSS -->
+	<link rel="stylesheet" href="css/owl-carousel.css">
+	<!-- Datepicker CSS -->
+	<link rel="stylesheet" href="css/datepicker.css">
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="css/animate.min.css">
+	<!-- Magnific Popup CSS -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Medipro CSS -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/responsive.css">
+
+<!-- Page-specific small styles -->
+<style>
+	/* Section background + spacing */
+	.section.gallery {
+		position: relative;
+		z-index: 1;
+	}
+
+	/* subtle pattern */
+	.section.gallery::before {
+		content: "";
+		position: absolute;
+		top: -80px;
+		right: -40px;
+		width: 260px;
+		height: 260px;
+		border-radius: 50%;
+		background: radial-gradient(circle at center, rgba(26,118,209,0.18), transparent 60%);
+		z-index: -1;
+	}
+
+	.gallery-filters {
+		text-align: center;
+		margin-bottom: 35px;
+	}
+
+	.gallery-filters .btn-filter {
+		border: 1px solid #1A76D1;
+		background: #ffffff;
+		color: #1A76D1;
+		padding: 8px 22px;
+		margin: 5px;
+		border-radius: 999px;
+		font-size: 14px;
+		cursor: pointer;
+		font-weight: 500;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		transition: all 0.25s ease-in-out;
+		box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+	}
+
+	.gallery-filters .btn-filter.active,
+	.gallery-filters .btn-filter:hover {
+		background: #1A76D1;
+		color: #fff;
+		box-shadow: 0 6px 18px rgba(26,118,209,0.35);
+		transform: translateY(-1px);
+	}
+
+	/* Card wrapper */
+	.gallery-item {
+	transition: opacity 0.35s ease, transform 0.35s ease;
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.single-gallery {
+	position: relative;
+	overflow: hidden;
+	border-radius: 14px;
+	margin-bottom: 30px;
+	box-shadow: 0 15px 35px rgba(15,34,58,0.14);
+	background: linear-gradient(135deg, #ffffff 0%, #f5f8ff 100%);
+	/* FIXED HEIGHT so all blocks match */
+	height: 230px;              /* you can change 230px → 250px if you want taller cards */
+}
+
+.single-gallery a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.single-gallery img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;          /* crop inside the frame */
+	display: block;
+	transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.single-gallery:hover img {
+	transform: scale(1.07);
+	filter: brightness(0.95);
+}
+	.single-gallery .gallery-overlay {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.15));
+		color: #fff;
+		opacity: 0;
+		transition: all 0.3s ease-in-out;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: flex-start;
+		text-align: left;
+		padding: 20px 22px;
+	}
+
+	.single-gallery:hover .gallery-overlay {
+		opacity: 1;
+	}
+
+	.gallery-tag {
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		background: #1A76D1;
+		padding: 4px 11px;
+		border-radius: 999px;
+		margin-bottom: 10px;
+	}
+
+	.gallery-title {
+		font-size: 18px;
+		font-weight: 600;
+		margin-bottom: 4px;
+	}
+
+	.gallery-desc {
+		font-size: 13px;
+		opacity: 0.9;
+	}
+
+	.gallery-play-icon {
+		font-size: 36px;
+		margin-bottom: 10px;
+		opacity: 0.9;
+	}
+
+	/* Make video cards feel a bit different */
+	.gallery-item[data-type="video"] .single-gallery::after {
+		content: "Video";
+		position: absolute;
+		top: 12px;
+		right: 14px;
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		background: rgba(0,0,0,0.7);
+		color: #fff;
+		padding: 3px 9px;
+		border-radius: 999px;
+	}
+
+	/* Responsive tweaks */
+	@media (max-width: 767px) {
+		.gallery-filters .btn-filter {
+			font-size: 12px;
+			padding: 7px 14px;
+		}
+		.gallery-title {
+			font-size: 16px;
+		}
+	}
+
+	/* Lightbox overlay */
+.gallery-lightbox {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(5, 12, 30, 0.92);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	z-index: 9999;
+}
+
+.gallery-lightbox.show {
+	display: flex;
+}
+
+.gallery-lightbox-inner {
+	background: #0f1a2a;
+	border-radius: 18px;
+	box-shadow: 0 20px 60px rgba(61, 61, 61, 0.6);
+	max-width: 1000px;
+	width: 100%;
+	max-height: 90vh;
+	padding: 18px 22px 22px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	color: #fff;
+}
+.gallery-lightbox-inner h3 {
+	color: #fff;
+}
+.gallery-lightbox-inner p {
+	color: #bbb9b9;
+}
+.gallery-lightbox-close {
+	align-self: flex-start;
+	border: none;
+	background: transparent;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 4px 10px 4px 0;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	opacity: 0.8;
+	transition: opacity 0.2s ease;
+}
+
+.gallery-lightbox-close:hover {
+	opacity: 1;
+}
+
+.gallery-lightbox-media-wrapper {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#lightboxImage,
+#lightboxVideo {
+	width: 100%;
+	max-height: 60vh;
+	border-radius: 14px;
+	background: #000;
+	object-fit: contain;
+}
+
+#lightboxVideo {
+	display: none;
+}
+
+.gallery-lightbox-caption {
+	margin-top: 6px;
+}
+
+.gallery-lightbox-caption h3 {
+	font-size: 20px;
+	margin-bottom: 4px;
+}
+
+.gallery-lightbox-caption p {
+	font-size: 14px;
+	opacity: 0.9;
+}
+
+/* click outside card closes */
+@media (max-width: 767px) {
+	.gallery-lightbox-inner {
+		max-width: 100%;
+	}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Preloader -->
+<div class="preloader">
+	<div class="loader">
+		<div class="loader-outter"></div>
+		<div class="loader-inner"></div>
+		<div class="indicator"></div>
+	</div>
+</div>
+<!-- End Preloader -->
+
+<!-- Header Area -->
+<header class="header">
+	<!-- Topbar -->
+	<div class="topbar">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-5 col-12">
+					<ul class="top-link">
+						<li><a href="about.html">About</a></li>
+						<li><a href="services.html">Services</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="privacy.html">Privacy & Policy</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-6 col-md-7 col-12">
+					<ul class="top-contact">
+						<li><i class="fa fa-phone"></i>+1 (234) 446-0822</li>
+						<li><i class="fa fa-envelope"></i><a href="mailto:2mtrucking69@gmail.com">2mtrucking69@gmail.com</a></li>
+						<li><i class="fa fa-envelope"></i><a href="mailto:dispatch@2mtruckingllc.com">dispatch@2mtruckingllc.com</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Topbar -->
+
+	<!-- Header Inner -->
+	<div class="header-inner">
+		<div class="container">
+			<div class="inner">
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-12">
+						<div class="logo">
+							<a class="logo-image" href="index.html"><img src="img/2mtruckingusa.png" alt="logo"></a>
+						</div>
+						<div class="mobile-nav"></div>
+					</div>
+					<div class="col-lg-7 col-md-9 col-12">
+						<div class="main-menu">
+							<nav class="navigation">
+								<ul class="nav menu">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about.html">About Us</a></li>
+									<li><a href="services.html">Services</a></li>
+									<li><a href="history.html">History</a></li>
+									<li class="active"><a href="gallery.html">Gallery</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<div class="col-lg-2 col-12">
+						<div class="get-quote">
+							<a href="contact.html" class="btn">Contact Us Now!</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/ End Header Inner -->
+</header>
+<!-- End Header Area -->
+
+<!-- Page Banner -->
+<section class="breadcrumbs overlay">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h2 style="color:#fff;">Gallery</h2>
+				<p style="color:#fff;">A look at our trucks, team, and day-to-day operations on the road.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Gallery Section -->
+<section class="section gallery">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-title">
+					<h2>On the Road with 2M Trucking</h2>
+					<img src="img/TRUCK1.gif" alt="truck-animation-gif" style="height: 130px;width: 170px;">
+					<p>Photos and videos from our routes, loading docks, truck yard, and team.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Filters -->
+		<div class="row">
+			<div class="col-12">
+				<div class="gallery-filters">
+					<button class="btn-filter active" data-filter="all">All</button>
+					<button class="btn-filter" data-filter="photo">Photos</button>
+					<button class="btn-filter" data-filter="video">Videos</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Gallery Grid -->
+		<div class="row">
+			<!-- Example Photo 1 -->
+			<div class="col-lg-4 col-md-6 col-12 gallery-item" data-type="photo">
+				<div class="single-gallery">
+					<a href="img/truckenteringtotheyard.jpg" class="popup-img">
+						<img src="img/truckenteringtotheyard.jpg" alt="Truck yard at night">
+						<div class="gallery-overlay">
+							<span class="gallery-tag">Photo</span>
+							<div class="gallery-title">Night Dispatch</div>
+							<div class="gallery-desc">Loaded and ready for overnight delivery.</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<!-- Example Photo 2 -->
+			<div class="col-lg-4 col-md-6 col-12 gallery-item" data-type="photo">
+				<div class="single-gallery">
+					<a href="img/about-img.jpg" class="popup-img">
+						<img src="img/about-img.jpg" alt="Truck on highway at sunrise">
+						<div class="gallery-overlay">
+							<span class="gallery-tag">Photo</span>
+							<div class="gallery-title">Sunrise Run</div>
+							<div class="gallery-desc">Early-morning haul across the interstate.</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<!-- Example Photo 3 -->
+			<div class="col-lg-4 col-md-6 col-12 gallery-item" data-type="photo">
+				<div class="single-gallery">
+					<a href="img/2mtruckstogether.jpg" class="popup-img">
+						<img src="img/2mtruckstogether.jpg" alt="Loading dock operations">
+						<div class="gallery-overlay">
+							<span class="gallery-tag">Photo</span>
+							<div class="gallery-title">Good to go</div>
+							<div class="gallery-desc">Careful driving to keep freight safe.</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			
+				<!-- Example Photo 4 -->
+			<div class="col-lg-4 col-md-6 col-12 gallery-item" data-type="photo">
+				<div class="single-gallery">
+					<a href="img/whiteandblue.jpg" class="popup-img">
+						<img src="img/whiteandblue.jpg" alt="Loading dock operations">
+						<div class="gallery-overlay">
+							<span class="gallery-tag">Photo</span>
+							<div class="gallery-title">We are always together</div>
+							<div class="gallery-desc">Careful driving to keep freight safe.</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+					<!-- Example Photo 5 -->
+			<div class="col-lg-4 col-md-6 col-12 gallery-item" data-type="photo">
+				<div class="single-gallery">
+					<a href="img/bluetiger.jpg" class="popup-img">
+						<img src="img/bluetiger.jpg" alt="Loading dock operations">
+						<div class="gallery-overlay">
+							<span class="gallery-tag">Photo</span>
+							<div class="gallery-title">Ready to roll</div>
+							<div class="gallery-desc">Always on time for appointments.</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+					<!-- Example Photo 6 -->
+			<div class="col-lg-4 col-md-6 col-12 gallery-item" data-type="photo">
+				<div class="single-gallery">
+					<a href="img/2410blacktruck.jpg" class="popup-img">
+						<img src="img/2410blacktruck.jpg" alt="Loading dock operations">
+						<div class="gallery-overlay">
+							<span class="gallery-tag">Photo</span>
+							<div class="gallery-title">Grey Freightliner</div>
+							<div class="gallery-desc">Side image</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			
+					<!-- Example Photo 7 -->
+			<div class="col-lg-4 col-md-6 col-12 gallery-item" data-type="photo">
+				<div class="single-gallery">
+					<a href="img/2410blacktrucksideimage.jpg" class="popup-img">
+						<img src="img/2410blacktrucksideimage.jpg" alt="Loading dock operations">
+						<div class="gallery-overlay">
+							<span class="gallery-tag">Photo</span>
+							<div class="gallery-title">Grey Freightliner</div>
+							<div class="gallery-desc"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<!-- Example Photo 4 -->
+			<div class="col-lg-4 col-md-6 col-12 gallery-item" data-type="photo">
+				<div class="single-gallery">
+					<a href="img/call-bg.jpg" class="popup-img">
+						<img src="img/call-bg.jpg" alt="2M Trucking team">
+						<div class="gallery-overlay">
+							<span class="gallery-tag">Photo</span>
+							<div class="gallery-title">We can haul any trailer</div>
+							<div class="gallery-desc">Dispatchers and drivers behind every on-time load.</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<!-- Example Video 1 -->
+			<div class="col-lg-4 col-md-6 col-12 gallery-item" data-type="video">
+				<div class="single-gallery">
+					<a href="video/2mvideo.mp4" class="popup-video">
+						<img src="img/2mvideothumbnail.jpg" alt="Video thumbnail - yard tour">
+						<div class="gallery-overlay">
+							<div class="gallery-play-icon"><i class="fa fa-play-circle"></i></div>
+							<span class="gallery-tag">Video</span>
+							<div class="gallery-title">Yard Walkthrough</div>
+							<div class="gallery-desc">A quick tour of our trucks and equipment.</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<!-- Example Video 2 -->
+			<div class="col-lg-4 col-md-6 col-12 gallery-item" data-type="video">
+				<div class="single-gallery">
+					<a href="video/owner.mp4" class="popup-video">
+						<img src="img/ownerrolling.jpg" alt="Video thumbnail - on the road">
+						<div class="gallery-overlay">
+							<div class="gallery-play-icon"><i class="fa fa-play-circle"></i></div>
+							<span class="gallery-tag">Video</span>
+							<div class="gallery-title">Let's hit the road</div>
+							<div class="gallery-desc">Stopped at Love's for fuel.</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<!-- Example Video 3 -->
+			<div class="col-lg-4 col-md-6 col-12 gallery-item" data-type="video">
+				<div class="single-gallery">
+					<a href="video/ontheroad.mp4" class="popup-video">
+						<img src="img/blue1150.jpg" alt="Video thumbnail - on the road">
+						<div class="gallery-overlay">
+							<div class="gallery-play-icon"><i class="fa fa-play-circle"></i></div>
+							<span class="gallery-tag">Video</span>
+							<div class="gallery-title">On the way to the delivery</div>
+							<div class="gallery-desc"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<!-- Add more photo/video blocks here as you wish -->
+		</div>
+	</div>
+</section>
+<!-- /Gallery Section -->
+
+<!-- Newsletter / Hiring block (optional reuse from index or skip) -->
+<section class="newsletter section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-12">
+				<div class="subscribe-text">
+					<h6>Drive with 2M Trucking</h6>
+					<p>Liked what you see in our gallery? Join our team and be part of the next chapter on the road.</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-12">
+				<div class="subscribe-form">
+					<form id="gallerySubscribeForm" class="newsletter-inner">
+						<input name="EMAIL" placeholder="Your email address" class="common-input"
+							   onfocus="this.placeholder = ''"
+							   onblur="this.placeholder = 'Your email address'" required type="email">
+						<button class="btn" type="submit">I'm Interested</button>
+						<p id="gallerySubscribeMessage" style="color: green; margin-top: 10px; display: none;">Thank you! We’ll be in touch.</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Footer Area (copied from index) -->
+<footer id="footer" class="footer">
+	<div class="footer-top">
+		<div class="container">
+			<div class="row">
+				<!-- About Us -->
+				<div class="col-lg-3 col-md-6 col-12">
+					<div class="single-footer">
+						<h2>About 2M Trucking</h2>
+						<p>2M TRUCKING LLC is a full-service logistics company offering reliable freight services across the USA. We connect businesses with efficient and timely transportation solutions.</p>
+						<ul class="social">
+							<li><a href="#"><i class="icofont-facebook"></i></a></li>
+							<li><a href="#"><i class="icofont-twitter"></i></a></li>
+							<li><a href="#"><i class="icofont-linkedin"></i></a></li>
+							<li><a href="#"><i class="icofont-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Quick Links -->
+				<div class="col-lg-3 col-md-6 col-12">
+					<div class="single-footer f-link">
+						<h2>Quick Links</h2>
+						<ul>
+							<li><a href="index.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
+							<li><a href="about.html"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
+							<li><a href="services.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Services</a></li>
+							<li><a href="gallery.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Gallery</a></li>
+							<li><a href="privacy.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Privacy & Policy</a></li>
+							<li><a href="contact.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Office Hours -->
+				<div class="col-lg-3 col-md-6 col-12">
+					<div class="single-footer">
+						<h2>Office Hours</h2>
+						<p>Our dispatch and support teams are available during the following hours:</p>
+						<ul class="time-sidual">
+							<li class="day">Mon - Sun <span>8:00 AM - 6:00 PM EDT</span></li>
+							<li class="day">Afterhours <span>6:00 PM - 8:00 AM EDT</span></li>
+							<li class="day">Afterhours call <span>+1 (234) 446 0822</span></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Hiring Newsletter -->
+				<div class="col-lg-3 col-md-6 col-12">
+					<div class="single-footer">
+						<h2>Join Our Team</h2>
+						<p>We’re hiring Owner Operators and Company Drivers. Enter your email and we’ll reach out with more info.</p>
+						<form id="fakeNewsletterForm" class="newsletter-inner">
+							<input name="email" placeholder="Your email address" class="common-input"
+								   onfocus="this.placeholder = ''"
+								   onblur="this.placeholder = 'Your email address'" required type="email">
+							<button class="button" type="submit"><i class="icofont-paper-plane"></i></button>
+							<p id="newsletterMessage" style="color: white; margin-top: 10px; display: none;">Thank you! Your info has been sent.</p>
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-12">
+					<div class="copyright-content text-center">
+						<p>&copy; 2025 2M TRUCKING LLC. All rights reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!--/ End Footer Area -->
+
+<!-- Gallery Lightbox -->
+<div id="galleryLightbox" class="gallery-lightbox">
+	<div class="gallery-lightbox-inner">
+		<button class="gallery-lightbox-close">
+			<i class="fa fa-arrow-left"></i> Back to gallery
+		</button>
+
+		<div class="gallery-lightbox-media-wrapper">
+			<img id="lightboxImage" src="" alt="" />
+			<video id="lightboxVideo" controls></video>
+		</div>
+
+		<div class="gallery-lightbox-caption">
+			<h3 id="lightboxTitle"></h3>
+			<p id="lightboxDesc"></p>
+		</div>
+	</div>
+</div>
+
+
+<!-- Scripts (same as index) -->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-migrate-3.0.0.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/colors.js"></script>
+<script src="js/jquery.nav.js"></script>
+<script src="js/slicknav.min.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/tilt.jquery.min.js"></script>
+<script src="js/owl-carousel.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/steller.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Page-specific JS -->
+<script>
+	jQuery(function ($) {
+		// Fake subscribe
+		$('#gallerySubscribeForm').on('submit', function (e) {
+			e.preventDefault();
+			$('#gallerySubscribeMessage').show();
+		});
+
+		/* =======================
+		   Lightbox open on click
+		======================= */
+		$('.single-gallery a').on('click', function (e) {
+			e.preventDefault();
+
+			var $link = $(this);
+			var href  = $link.attr('href');
+			var $item = $link.closest('.gallery-item');
+			var type  = $item.data('type'); // "photo" or "video"
+
+			var title = $item.find('.gallery-title').text();
+			var desc  = $item.find('.gallery-desc').text();
+
+			$('#lightboxTitle').text(title);
+			$('#lightboxDesc').text(desc);
+
+			var $img   = $('#lightboxImage');
+			var $video = $('#lightboxVideo');
+			var videoEl = $video.get(0);
+
+			if (type === 'video' || /\.(mp4|webm|ogg)$/i.test(href)) {
+				// show video
+				$img.hide().attr('src', '');
+				$video.show().attr('src', href);
+				if (videoEl) {
+					videoEl.load();
+					videoEl.play().catch(function(){});
+				}
+			} else {
+				// show image
+				if (videoEl) {
+					videoEl.pause();
+					$video.attr('src', '');
+				}
+				$video.hide();
+				$img.show().attr('src', href);
+			}
+
+			$('#galleryLightbox').addClass('show');
+		});
+
+		// Close lightbox (back button or click outside)
+		$('.gallery-lightbox-close').on('click', function () {
+			closeLightbox();
+		});
+
+		$('#galleryLightbox').on('click', function (e) {
+			// close when clicking dark background, not when clicking inner card
+			if ($(e.target).is('#galleryLightbox')) {
+				closeLightbox();
+			}
+		});
+
+		function closeLightbox() {
+			var $video = $('#lightboxVideo');
+			var videoEl = $video.get(0);
+			if (videoEl) {
+				videoEl.pause();
+			}
+			$('#galleryLightbox').removeClass('show');
+		}
+
+		/* =======================
+		   FILTER BUTTONS (smooth)
+		======================= */
+		$('.btn-filter').on('click', function () {
+			var filter = $(this).data('filter'); // "all" | "photo" | "video"
+
+			$('.btn-filter').removeClass('active');
+			$(this).addClass('active');
+
+			$('.gallery-item').each(function () {
+				var $item = $(this);
+				var type = $item.data('type');
+				var shouldShow = (filter === 'all' || type === filter);
+
+				if (shouldShow) {
+					$item
+						.stop(true, true)
+						.css('display', 'block')
+						.animate({ opacity: 1 }, 300)
+						.css('transform', 'translateY(0)');
+				} else {
+					$item
+						.stop(true, true)
+						.animate({ opacity: 0 }, 250, function () {
+							$item.css('display', 'none');
+						})
+						.css('transform', 'translateY(15px)');
+				}
+			});
+		});
+	});
+</script>
+
+</body>
+</html>
